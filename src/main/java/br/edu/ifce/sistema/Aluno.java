@@ -10,7 +10,7 @@ public class Aluno {
 	private String rg;
 	private int idade;
 	private String cep;
-	private String endereço;
+	private String endereco;
 	private String sexo;
 	private String curso;
 	private int semestre;
@@ -83,13 +83,14 @@ public class Aluno {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
-	
-	
-	
 }
+	
+	
+	
+
