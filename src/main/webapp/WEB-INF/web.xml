@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>CadastroAlunoServlet</servlet-name>
+  	<display-name>CadastroAlunoServlet</display-name>
+  	<description></description>
+  	<servlet-class>br.edu.ifce.sistema.CadastroAlunoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CadastroAlunoServlet</servlet-name>
+  	<url-pattern>/CadastroAlunoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

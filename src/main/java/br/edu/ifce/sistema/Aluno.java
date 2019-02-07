@@ -2,6 +2,7 @@ package br.edu.ifce.sistema;
 
 public class Aluno {
 	
+	//Atributos da classe Aluno
 	private int id;
 	private String nome;
 	private String matricula;
@@ -9,10 +10,13 @@ public class Aluno {
 	private String rg;
 	private int idade;
 	private String cep;
+	private String endereço;
 	private String sexo;
 	private String curso;
 	private int semestre;
 	private String email;
+	
+	//Gets e Sets da Classe aluno
 	public int getId() {
 		return id;
 	}
@@ -79,5 +83,13 @@ public class Aluno {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getEndereço() {
+		return endereço;
+	}
+	public void setEndereço(String endereço) {
+		this.endereço = endereço;
+	}
+	
+	
 	
 }
