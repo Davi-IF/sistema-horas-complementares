@@ -10,6 +10,13 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
 <meta charset="UTF-8">
 <title>Cadastro Aluno</title>
 </head>
@@ -21,15 +28,62 @@
 			</a>
 			<li class="nav-item active"><a class="nav-link"
 				href="paginaPrincipal.jsp">Inicio</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-			<li class="nav-item"><a class="nav-link"
+
+			<li class="nav-item active"><a class="nav-link"
 				href="formCadastroAluno.jsp">Cadastro</a></li>
 			</li>
+			<li class="nav-item"><button class="btn btn-secondary "
+					data-toggle="modal" data-target="#myModal">Login</button></li>
 		</ul>
 	</nav>
-	<h2 class="col-sm-12 bg-secondary text-white">
-		<center>Cadastramento do Aluno</center>
-	</h2>
+	
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Login</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<form action="" method="post">
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="matricula">Matricula:</label>
+							<div class="col-sm-12 input-group input-group-sm mb-3">
+								<input type="text" class="form-control" id="matricula"
+									placeholder="Digite Aqui">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="senha">Senha:</label>
+							<div class="col-sm-12 input-group input-group-sm mb-3">
+								<input type="password" class="form-control" id="senha"
+									placeholder="Digite Aqui">
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success" data-dismiss="modal">Entrar</button>
+						<a href="formCadastroAluno.jsp" class="ml-5 pl-3">Não tem
+							cadastro?</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="col-sm-12 bg-secondary ">
+		<h2 class="text-white ml-2">
+		Cadastramento do Aluno
+		</h2>		
+	</div>
 	<div class="row">
 		<div class="col"></div>
 		<div class="col">
@@ -64,6 +118,14 @@
 					<label class="control-label col-sm-2" for="cpf">CPF:</label>
 					<div class="col-sm-12 input-group input-group-sm mb-3">
 						<input type="text" class="form-control" id="cpf"
+							placeholder="Digite Aqui">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="senha">Senha:</label>
+					<div class="col-sm-12 input-group input-group-sm mb-3">
+						<input type="password" class="form-control" id="senha"
 							placeholder="Digite Aqui">
 					</div>
 				</div>
