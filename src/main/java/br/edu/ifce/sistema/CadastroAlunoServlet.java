@@ -26,14 +26,16 @@ public class CadastroAlunoServlet extends HttpServlet {
 
 		Aluno aluno = new Aluno();
 		
-		String nomeAluno = request.getParameter("nome");
-		aluno.setNome(nomeAluno);
+		String nome = request.getParameter("nome");
+		aluno.setNome(nome);
 
 		String matricula = request.getParameter("matricula");
 		aluno.setMatricula(matricula);
 
 		String cpf = request.getParameter("cpf");
 		aluno.setCpf(cpf);
+		
+		
 		
 		
 		try {
@@ -80,6 +82,16 @@ public class CadastroAlunoServlet extends HttpServlet {
 		banco.adiciona(aluno);
 
 		CPFValidator validator = new CPFValidator();
+		
+		if(nome == null || matricula == null || cpf == null || rg == null || endereco == null || cep == null || sexo == null || curso == null || email == null) {
+			String mensagem = "Dados vazios";
+			request.setAttribute("DadosVazios",mensagem );
+			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
+			rd.forward(request, response);
+			
+			
+		}
+	
 		try {
 			// logica de negocio ...
 			validator.assertValid(cpf);
