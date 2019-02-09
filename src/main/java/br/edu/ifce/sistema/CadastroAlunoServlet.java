@@ -35,12 +35,29 @@ public class CadastroAlunoServlet extends HttpServlet {
 		String cpf = request.getParameter("cpf");
 		aluno.setCpf(cpf);
 		
-		int idade = Integer.parseInt(request.getParameter("idade"));
-		aluno.setIdade(idade);
-		/*
-		int semestre = Integer.parseInt(request.getParameter("semestre"));
-		aluno.setSemestre(semestre);
-		*/
+		
+		try {
+			int idade = Integer.parseInt(request.getParameter("idade"));
+			aluno.setIdade(idade);
+		}catch(NumberFormatException e) {
+			String mensagem = "Dados vazios";
+			request.setAttribute("Dados vazios",mensagem );
+			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
+			rd.forward(request, response);
+			
+		}
+		
+		try {
+			int semestre = Integer.parseInt(request.getParameter("semestre"));
+			aluno.setSemestre(semestre);
+		}catch(NumberFormatException e) {
+			String mensagem = "Dados vazios";
+			request.setAttribute("Dados vazios",mensagem );
+			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
+			rd.forward(request, response);
+			
+		}
+		
 		String rg = request.getParameter("rg");
 		aluno.setRg(rg);
 
