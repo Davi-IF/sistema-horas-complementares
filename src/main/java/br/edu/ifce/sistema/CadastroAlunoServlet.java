@@ -1,6 +1,7 @@
 package br.edu.ifce.sistema;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.caelum.stella.ValidationMessage;
 import br.com.caelum.stella.validation.CPFValidator;
 import br.com.caelum.stella.validation.InvalidStateException;
 
@@ -32,6 +34,12 @@ public class CadastroAlunoServlet extends HttpServlet {
 
 		String cpf = request.getParameter("cpf");
 		aluno.setCpf(cpf);
+		
+		int idade = Integer.parseInt(request.getParameter("idade"));
+		aluno.setIdade(idade);
+		
+		int semestre = Integer.parseInt(request.getParameter("semestre"));
+		aluno.setSemestre(semestre);
 
 		String rg = request.getParameter("rg");
 		aluno.setRg(rg);
@@ -58,17 +66,18 @@ public class CadastroAlunoServlet extends HttpServlet {
 		try {
 			// logica de negocio ...
 			validator.assertValid(cpf);
-
-			// continuacao da logica de negocio ...
-		} catch (InvalidStateException e) { // exception lancada quando o documento e invalido
-
-			// Essa parte aqui que tou na duvida tem como me explicar
-			// request.setAttribute("aluno", aluno.getNome());
-			RequestDispatcher rd = request.getRequestDispatcher("Aluno invalido");
-			// rd.forward(request, response);
-		}
+			
+			// continuação da lógica de negócio ...
+		} catch (InvalidStateException e) { // exception lançada quando o documento é inválido
+			
+		//Essa parte aqui que tou na duvida tem como me explicar 
+			List<ValidationMessage> validationMessages = validator.invalidMessagesFor(cpf);
+			request.setAttribute("listaDeErros", validationMessages );
+			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
+			rd.forward(request, response);
+	}
 		request.setAttribute("aluno", aluno.getNome());
-		RequestDispatcher rd = request.getRequestDispatcher("/novoAlunoCriado.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 		rd.forward(request, response);
 
 	}
