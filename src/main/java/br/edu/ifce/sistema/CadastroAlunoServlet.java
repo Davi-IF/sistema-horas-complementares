@@ -58,11 +58,9 @@ public class CadastroAlunoServlet extends HttpServlet {
 			
 		}
 		
-		
-
 		String rg = request.getParameter("rg");
 		aluno.setRg(rg);
-		
+
 		String cep = request.getParameter("cep");
 		aluno.setCep(cep);
 
@@ -86,8 +84,8 @@ public class CadastroAlunoServlet extends HttpServlet {
 			// logica de negocio ...
 			validator.assertValid(cpf);
 			
-			// continuação da lógica de negócio ...
-		} catch (InvalidStateException e) { // exception lançada quando o documento é inválido
+			// continuaï¿½ï¿½o da lï¿½gica de negï¿½cio ...
+		} catch (InvalidStateException e) { // exception lanï¿½ada quando o documento ï¿½ invï¿½lido
 			
 		//Essa parte aqui que tou na duvida tem como me explicar 
 			List<ValidationMessage> validationMessages = validator.invalidMessagesFor(cpf);
