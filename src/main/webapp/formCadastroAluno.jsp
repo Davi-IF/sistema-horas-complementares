@@ -21,12 +21,10 @@
 </head>
 <body>
 
-	<c:set var="income" scope="session" value="${4000*4}" />
-	<c:if test="${income > 8000}">
+	<c:if test="${not empty listaDeErros}">
 		<div class="alert alert-danger alert-dismissible fade show">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<strong>Danger!</strong> This alert box could indicate a dangerous or
-			potentially negative action.
+			<c:out value="${listaDeErros}"></c:out>
 		</div>
 	</c:if>
 
@@ -130,7 +128,7 @@
 				</div>
 				<label class="control-label col-sm-2" for="idade">Idade:</label>
 				<div class="col-sm-4 input-group input-group-sm mb-3">
-					<input type="number" class="form-control" id="email" name="idade">
+					<input type="number" class="form-control" min="17" max="100" id="email" name="idade">
 				</div>
 			</div>
 
@@ -167,19 +165,11 @@
 					id="cursos" name="curso">
 					<option>Tecnologia em Redes de Computadores</option>
 					<option>Licenciatura em Ciências Biologicas</option>
-				</select> <label class="control-label col-sm-2" for="semestre">Semestre:</label>
-				<select
-					class="form-control col-sm-4 input-group input-group-sm mb-3"
-					id="semestres" name="semestres">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-				</select>
+					</select>
+				<label class="control-label col-sm-2" for="semestre">Semestre:</label>
+				<div class="col-sm-4 input-group input-group-sm mb-3">
+					<input type="number" class="form-control" min="1" max="8" id="semestre" name="semestre">
+				</div>
 			</div>
 
 			<div class="form-group">
