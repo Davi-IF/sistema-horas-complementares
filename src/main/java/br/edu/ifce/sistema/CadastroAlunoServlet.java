@@ -41,7 +41,7 @@ public class CadastroAlunoServlet extends HttpServlet {
 			aluno.setIdade(idade);
 		}catch(NumberFormatException e) {
 			String mensagem = "Dados vazios";
-			request.setAttribute("Dados vazios",mensagem );
+			request.setAttribute("DadosVazios",mensagem );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 			rd.forward(request, response);
 			
@@ -52,7 +52,7 @@ public class CadastroAlunoServlet extends HttpServlet {
 			aluno.setSemestre(semestre);
 		}catch(NumberFormatException e) {
 			String mensagem = "Dados vazios";
-			request.setAttribute("Dados vazios",mensagem );
+			request.setAttribute("DadosVazios",mensagem );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 			rd.forward(request, response);
 			
