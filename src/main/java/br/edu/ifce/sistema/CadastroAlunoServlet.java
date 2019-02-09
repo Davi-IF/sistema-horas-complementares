@@ -35,7 +35,7 @@ public class CadastroAlunoServlet extends HttpServlet {
 
 		String rg = request.getParameter("rg");
 		aluno.setRg(rg);
-		
+
 		String cep = request.getParameter("cep");
 		aluno.setCep(cep);
 
