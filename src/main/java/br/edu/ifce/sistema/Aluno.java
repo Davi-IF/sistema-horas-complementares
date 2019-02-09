@@ -15,7 +15,14 @@ public class Aluno {
 	private String curso;
 	private int semestre;
 	private String email;
+	private String senha;
 	
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	//Gets e Sets da Classe aluno
 	public int getId() {
 		return id;
