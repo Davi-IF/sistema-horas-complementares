@@ -23,7 +23,8 @@ public class CadastroAlunoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Cadastrando novo Aluno");
-
+		
+		Banco banco = new Banco();
 		Aluno aluno = new Aluno();
 		
 		String nome = request.getParameter("nome");
@@ -35,29 +36,33 @@ public class CadastroAlunoServlet extends HttpServlet {
 		String cpf = request.getParameter("cpf");
 		aluno.setCpf(cpf);
 		
-		
-		
-		
 		try {
-			int idade = Integer.parseInt(request.getParameter("idade"));
+			String idadeString = request.getParameter("idade"); 
+			if(idadeString == null) { idadeString = "1";} 
+			int idade = Integer.parseInt(idadeString);
 			aluno.setIdade(idade);
 		}catch(NumberFormatException e) {
+			e.printStackTrace();
 			String mensagem = "Dados vazios";
 			request.setAttribute("DadosVazios",mensagem );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 			rd.forward(request, response);
-			
+			return;
 		}
 		
 		try {
-			int semestre = Integer.parseInt(request.getParameter("semestre"));
+			String semestreString = request.getParameter("semestre"); 
+			
+			if(semestreString == null) { semestreString = "1";} 
+			int semestre = Integer.parseInt(semestreString);
 			aluno.setSemestre(semestre);
 		}catch(NumberFormatException e) {
+			e.printStackTrace();
 			String mensagem = "Dados vazios";
 			request.setAttribute("DadosVazios",mensagem );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 			rd.forward(request, response);
-			
+			return;
 		}
 		
 		String rg = request.getParameter("rg");
@@ -78,8 +83,8 @@ public class CadastroAlunoServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		aluno.setEmail(email);
 
-		Banco banco = new Banco();
-		banco.adiciona(aluno);
+		
+		
 
 		CPFValidator validator = new CPFValidator();
 		
@@ -88,8 +93,7 @@ public class CadastroAlunoServlet extends HttpServlet {
 			request.setAttribute("DadosVazios",mensagem );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 			rd.forward(request, response);
-			
-			
+			return;
 		}
 	
 		try {
@@ -104,10 +108,12 @@ public class CadastroAlunoServlet extends HttpServlet {
 			request.setAttribute("listaDeErros", validationMessages );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
 			rd.forward(request, response);
-	}
-		request.setAttribute("aluno", aluno.getNome());
-		RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
-		rd.forward(request, response);
+			return;
+		}
+		System.out.println("Cadastro feito!");
+		banco.adiciona(aluno);
+		
+		response.sendRedirect("paginaPrincipal.jsp");
 
 	}
 }

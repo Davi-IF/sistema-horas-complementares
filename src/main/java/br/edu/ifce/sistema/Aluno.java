@@ -1,6 +1,11 @@
 package br.edu.ifce.sistema;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno {
+	
+	public List<Atividade> atividades = new ArrayList<Atividade>();
 	
 	//Atributos da classe Aluno
 	private int id;
@@ -16,6 +21,34 @@ public class Aluno {
 	private int semestre;
 	private String email;
 	private String senha;
+	
+	public void adicionaAtividade(Atividade a) {
+		atividades.add(a);
+	}
+	
+	public List<Atividade> getAtividades(){
+		return atividades;
+	}
+	
+	public Aluno() {
+		
+	}
+	
+	public Aluno(String nome, String matricula, String cpf, String rg, int idade, String cep,
+			String endereco, String sexo, String curso, int semestre, String email, String senha) {
+		this.nome = nome;
+		this.matricula = matricula;
+		this.cep = cep;
+		this.cpf = cpf;
+		this.curso = curso;
+		this.email = email;
+		this.endereco = endereco;
+		this.idade = idade;
+		this.rg = rg;
+		this.semestre = semestre;
+		this.senha = senha;
+		this.sexo = sexo;
+	}
 	
 	public String getSenha() {
 		return senha;
@@ -95,6 +128,12 @@ public class Aluno {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.nome;
 	}
 }
 	

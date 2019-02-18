@@ -27,19 +27,26 @@
 			<c:out value="${listaDeErros}"></c:out>
 		</div>
 	</c:if>
+	
+	<c:if test="${not empty DadosVazios}">
+		<div class="alert alert-warning alert-dismissible fade show">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<c:out value="${DadosVazios}"></c:out>
+		</div>
+	</c:if>
 
 	<nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
 		<ul class="navbar-nav">
-			<a class="navbar-brand" href="#"> <img src="images/if.png"
-				alt="Logo" style="width: 50px;">
+			<a class="navbar-brand" href="#"> <img src="images/ifce-logo-editado.png"
+				border="white" alt="Logo" style="width: 150px;">
 			</a>
-			<li class="nav-item active"><a class="nav-link"
+			<li class="nav-item active mt-1"><a class="nav-link"
 				href="paginaPrincipal.jsp">Inicio</a></li>
 
-			<li class="nav-item active"><a class="nav-link"
+			<li class="nav-item active mt-1"><a class="nav-link"
 				href="formCadastroAluno.jsp">Cadastro</a></li>
 			</li>
-			<li class="nav-item"><button class="btn btn-secondary "
+			<li class="nav-item mt-1"><button class="btn btn-secondary "
 					data-toggle="modal" data-target="#myModal">Login</button></li>
 		</ul>
 	</nav>
@@ -179,5 +186,15 @@
 			</div>
 		</form>
 	</div>
+	<nav
+		class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-bottom">
+		<ul class="navbar-nav">
+			<a class="navbar-brand" href="#"> <img src="images/ifce-logo-editado.png"
+				alt="Logo" style="width: 150px;">
+			</a>
+			<li class="nav-item active mt-2"><a class="nav-link" href="#">Por:Davi
+					Nunes & Juliana Pinheiro</a></li>
+		</ul>
+	</nav>
 </body>
 </html>
