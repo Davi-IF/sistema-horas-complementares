@@ -26,7 +26,7 @@ public class CadastroAtividadeServlet extends HttpServlet {
 		//atividade.setDocumento(request.getParameter("documento"));
 		atividade.setGrupo(Integer.parseInt(request.getParameter("grupo")));
 		atividade.setHorasTotais(Integer.parseInt(request.getParameter("horasAtividade")));
-		atividade.setNome(request.getParameter("nome"));
+		atividade.setNome(request.getParameter("atividade"));
 		atividade.setTipoAtividade(request.getParameter("tipoAtividade"));
 		atividade.setAluno(a);
 		

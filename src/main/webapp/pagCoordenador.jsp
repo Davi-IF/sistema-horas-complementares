@@ -23,8 +23,8 @@
 		<table class="table table-dark table-striped">
 			<thead>
 				<tr>
-					<th>Nome Aluno</th>
 					<th>Nome Atividade</th>
+					<th>Nome Aluno</th>
 					<th>Horas Totais</th>
 					<th>Grupo</th>
 					<th>Tipo de Atividade</th>
@@ -33,7 +33,7 @@
 			<tbody>
 				<c:forEach items="${atividades}" var="atividade">
 					<tr>
-						<td><small> ${atividade.nomeAtividade} </small></td>
+						<td><small> ${atividade.nome} </small></td>
 						<td><small> ${atividade.aluno} </small></td>
 						<td><small> ${atividade.horasTotais} </small></td>
 						<td><small> ${atividade.grupo} </small></td>

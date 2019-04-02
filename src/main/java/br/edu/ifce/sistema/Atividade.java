@@ -4,7 +4,7 @@ package br.edu.ifce.sistema;
 public class Atividade {
 
 	private int grupo;
-	private String nomeAtividade;
+	private String nome;
 	private int horasTotais;
 	private int horasAproveitadas;
 	private String tipoAtividade;
@@ -28,11 +28,11 @@ public class Atividade {
 	}
 
 	public String getNome() {
-		return nomeAtividade;
+		return nome;
 	}
 
 	public void setNome(String nome) {
-		this.nomeAtividade = nome;
+		this.nome = nome;
 	}
 
 	public int getHorasTotais() {

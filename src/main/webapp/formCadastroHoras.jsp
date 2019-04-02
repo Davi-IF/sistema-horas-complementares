@@ -17,7 +17,6 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<meta charset="UTF-8">
 
 <title>${aluno.nome}</title>
 </head>
@@ -34,12 +33,11 @@
 
 			<li class="nav-item active mt-1"><a class="nav-link" href="#">Meu
 					Progresso</a></li>
-			
+
 
 			<li class="nav-item active mt-1"><a class="nav-link" href="#"
-				data-toggle="modal" data-target="#atividades">
-				Minhas Atividades</a></li>
-			
+				data-toggle="modal" data-target="#atividades"> Minhas Atividades</a></li>
+
 		</ul>
 	</nav>
 
@@ -52,7 +50,7 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 
-				
+
 				<div class="modal-body">
 					<p>Nome: ${aluno.nome}</p>
 					<p>Matricula: ${aluno.matricula}</p>
@@ -65,7 +63,7 @@
 					<p>Sexo: ${aluno.sexo}</p>
 					<p>Curso: ${aluno.curso}</p>
 					<p>Semestre: ${aluno.semestre}</p>
-				
+
 				</div>
 
 				<div class="modal-footer">
@@ -76,7 +74,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade" id="atividades">
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
@@ -86,14 +84,14 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 
-				
+
 				<div class="modal-body">
 					<ul>
-					<c:forEach items="${aluno.atividades}" var="atividade">
-						<li>
-							<p>${atividade.nome}</p>
-						</li>
-					</c:forEach>
+						<c:forEach items="${aluno.atividades}" var="atividade">
+							<li>
+								<p>${atividade.nome}</p>
+							</li>
+						</c:forEach>
 					</ul>
 				</div>
 

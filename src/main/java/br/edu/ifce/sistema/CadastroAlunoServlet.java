@@ -88,7 +88,7 @@ public class CadastroAlunoServlet extends HttpServlet {
 
 		CPFValidator validator = new CPFValidator();
 		
-		if(nome == null || matricula == null || cpf == null || rg == null || endereco == null || cep == null || sexo == null || curso == null || email == null) {
+		if(nome.isEmpty() || matricula.isEmpty() || cpf.isEmpty() || rg.isEmpty() || endereco.isEmpty() || cep.isEmpty() || sexo.isEmpty() || curso.isEmpty() || email.isEmpty()) {
 			String mensagem = "Dados vazios";
 			request.setAttribute("DadosVazios",mensagem );
 			RequestDispatcher rd = request.getRequestDispatcher("/formCadastroAluno.jsp");
