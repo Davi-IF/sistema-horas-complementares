@@ -1,8 +1,16 @@
 
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/java,linux,windows,eclipse,java-web
 # Edit at https://www.gitignore.io/?templates=java,linux,windows,eclipse,java-web
 
 ### Eclipse ###
+=======
+# Created by https://www.gitignore.io/api/java,linux,macos,windows,eclipse,java-web
+# Edit at https://www.gitignore.io/?templates=java,linux,macos,windows,eclipse,java-web
+
+### Eclipse ###
+
+>>>>>>> 3f87d1cb39dd1b1e06bb9a61d0c01c22ad5a99ac
 .metadata
 bin/
 tmp/
@@ -115,6 +123,37 @@ target/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+<<<<<<< HEAD
+=======
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+>>>>>>> 3f87d1cb39dd1b1e06bb9a61d0c01c22ad5a99ac
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -140,4 +179,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+<<<<<<< HEAD
 # End of https://www.gitignore.io/api/java,linux,windows,eclipse,java-web
+=======
+# End of https://www.gitignore.io/api/java,linux,macos,windows,eclipse,java-web
+>>>>>>> 3f87d1cb39dd1b1e06bb9a61d0c01c22ad5a99ac
