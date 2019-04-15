@@ -10,16 +10,16 @@ public class Coordenador {
 	private static List<Atividade> atividadesAprovadas = new ArrayList<Atividade>();
 	private static List<Atividade> atividadesReprovadas = new ArrayList<Atividade>();
 	
-	public static List<Atividade> getAtividadesTotais() {
+	public List<Atividade> getAtividadesTotais() {
 		return Coordenador.atividadesTotais;
 	}
-	public static List<Atividade> getAtividadesRecebidas() {
+	public List<Atividade> getAtividadesRecebidas() {
 		return Coordenador.atividadesRecebidas;
 	}
-	public static List<Atividade> getAtividadesAprovadas() {
+	public List<Atividade> getAtividadesAprovadas() {
 		return Coordenador.atividadesAprovadas;
 	}
-	public static List<Atividade> getAtividadesReprovadas() {
+	public List<Atividade> getAtividadesReprovadas() {
 		return Coordenador.atividadesReprovadas;
 	}
 	

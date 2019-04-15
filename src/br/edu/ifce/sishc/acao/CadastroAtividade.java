@@ -17,22 +17,28 @@ public class CadastroAtividade implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		Banco b = new Banco();
-		Aluno a = b.getAluno(Integer.parseInt(request.getParameter("aluno")));
-		Coordenador c = new Coordenador();
-		
-		Atividade at = new Atividade();
-		at.setAluno(a);
-		at.setDocumento("");
-		at.setGrupo(Integer.parseInt(request.getParameter("grupo")));
-		at.setHorasTotais(Integer.parseInt(request.getParameter("horasTotais")));
-		at.setNome(request.getParameter("nome"));
-		at.setTipoAtividade(request.getParameter("tipo"));
-		
-		c.adiciona(at);
-		
-		request.setAttribute("aluno", a);
-		return "forward:paginaAluno.jsp";
+		try {
+			Banco b = new Banco();
+			Aluno a = b.getAluno(Integer.parseInt(request.getParameter("aluno")));
+			Coordenador c = new Coordenador();
+			
+			Atividade at = new Atividade();
+			at.setAluno(a);
+			at.setDocumento("");
+			at.setGrupo(Integer.parseInt(request.getParameter("grupo")));
+			at.setHorasTotais(Integer.parseInt(request.getParameter("horasTotais")));
+			at.setNome(request.getParameter("nome"));
+			at.setTipoAtividade(request.getParameter("tipo"));
+			
+			c.adiciona(at);
+			
+			request.setAttribute("aluno", a);
+			return "forward:paginaAluno.jsp";
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			
+			return "forward:loginAluno.jsp";
+		}
 	}
 
 }
