@@ -18,17 +18,19 @@ public class MainServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nomeDaClasse = request.getParameter("acao");
-		
+		String nomeDaAcao = null;
 		try {
 			Class classe = Class.forName("br.edu.ifce.sishc.acao."+nomeDaClasse);
 			Acao acao = (Acao) classe.newInstance();
 			
-			String nomeDaAcao = acao.executa(request, response);
+			nomeDaAcao = acao.executa(request, response);
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
 		
-		String[] acoes = nomeDaClasse.split(":");
+		String[] acoes = nomeDaAcao.split(":");
+		
+		System.out.println(acoes[0]);
 		
 		if(acoes[0].equals("forward")) {
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/"+acoes[1]);
