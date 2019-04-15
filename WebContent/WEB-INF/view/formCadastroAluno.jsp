@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<h3>Cadastro Aluno</h3>
 	<form action="${link }" method="post">
 	
 		Nome <input type="text" name="nome"><br>

@@ -1,15 +1,10 @@
 package br.edu.ifce.sishc.acao;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import br.com.caelum.stella.ValidationMessage;
-import br.com.caelum.stella.validation.CPFValidator;
-import br.com.caelum.stella.validation.InvalidStateException;
 import br.edu.ifce.sishc.modelo.Aluno;
 import br.edu.ifce.sishc.modelo.Banco;
 
