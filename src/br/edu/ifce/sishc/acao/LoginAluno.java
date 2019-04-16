@@ -21,12 +21,13 @@ public class LoginAluno implements Acao {
 		
 		Banco b = new Banco();
 		
-		Aluno a = b.autenticaAluno(matricula, senha);
+		Boolean a = b.autenticaAluno(matricula, senha);
 		
-		if(a.equals(null)) {
+		if(!a) {
 			return "forward:loginAluno.jsp";
 		}else {
-			request.setAttribute("aluno", a);
+			Aluno al = b.getAluno(matricula);
+			request.setAttribute("aluno", al);
 			return "forward:paginaAluno.jsp";
 		}
 

@@ -32,18 +32,30 @@ public class Banco {
 		return null;
 	}
 	
-	public Aluno autenticaAluno(String matricula, String senha) {
+	public Aluno getAluno(String matricula) {
+		Iterator<Aluno> it = listaDeAlunos.iterator();
+		
+		while(it.hasNext()) {
+			Aluno a = it.next();
+			if(a.getMatricula().equals(matricula)) {
+				return a;
+			}
+		}
+		return null;
+	}
+	
+	public boolean autenticaAluno(String matricula, String senha) {
 		Iterator<Aluno> it = listaDeAlunos.iterator();
 		
 		while(it.hasNext()) {
 			Aluno a = it.next();
 			
 			if(a.getMatricula().equals(matricula) && a.getSenha().equals(senha)) {
-				return a;
+				return true;
 			}
 		}
 		
-		return null;
+		return false;
 	}
 	
 	public List<Aluno> getAlunos() {

@@ -45,6 +45,10 @@ public class Atividade {
 		}
 		return this.horasAproveitadas;
 	}
+	
+	public void defineHorasAproveitadas(int horas) {
+		this.horasAproveitadas = horas;
+	}
 	public void setHorasAproveitadas() {
 		switch (this.grupo) {
 		case 1:

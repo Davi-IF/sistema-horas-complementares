@@ -12,6 +12,8 @@ public class Aluno {
 	private List<Atividade> atividadesGrupo4 = new ArrayList<Atividade>();
 	private List<Atividade> atividadesGrupo5 = new ArrayList<Atividade>();
 	private List<Atividade> atividadesGrupo6 = new ArrayList<Atividade>();
+	
+	
 
 	private int id;
 	private String nome;
@@ -40,37 +42,55 @@ public class Aluno {
 	public void addAtividade(Atividade a) {
 		switch (a.getGrupo()) {
 		case 1:
-			if(tamanhoList(atividadesGrupo1) < 51) {
+			if(tamanhoList(atividadesGrupo1) < 50) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 50) {
+					a.defineHorasAproveitadas(50-tamanhoList(atividadesGrupo1));
+				}
 				atividadesGrupo1.add(a);
 				addAtividadeTotal(a);
 			}
 			break;
 		case 2:
-			if(tamanhoList(atividadesGrupo2) < 21) {
+			if(tamanhoList(atividadesGrupo2) < 20) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 20) {
+					a.defineHorasAproveitadas(20-tamanhoList(atividadesGrupo1));
+				}
 				atividadesGrupo2.add(a);
 				addAtividadeTotal(a);
 			}
 			break;
 		case 3:
-			if(tamanhoList(atividadesGrupo3) < 41) {
+			if(tamanhoList(atividadesGrupo3) < 40) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 40) {
+					a.defineHorasAproveitadas(40-tamanhoList(atividadesGrupo1));
+				}
 				atividadesGrupo3.add(a);
 				addAtividadeTotal(a);
 			}
 			break;
 		case 4:
-			if(tamanhoList(atividadesGrupo4) < 41) {
+			if(tamanhoList(atividadesGrupo4) < 40) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 40) {
+					a.defineHorasAproveitadas(40-tamanhoList(atividadesGrupo1));
+				}
 				atividadesGrupo4.add(a);
 				addAtividadeTotal(a);
 			}
 			break;
 		case 5:
-			if(tamanhoList(atividadesGrupo5) < 41) {
+			if(tamanhoList(atividadesGrupo5) < 40) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 40) {
+					a.defineHorasAproveitadas(40-tamanhoList(atividadesGrupo1));
+				}
 				atividadesGrupo5.add(a);
 				addAtividadeTotal(a);
 			}
 			break;
 		case 6:
-			if(tamanhoList(atividadesGrupo6) < 31) {
+			if(tamanhoList(atividadesGrupo6) < 30) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 30) {
+					a.defineHorasAproveitadas(30-tamanhoList(atividadesGrupo1));
+				}
 				atividadesGrupo6.add(a);
 				addAtividadeTotal(a);
 			}
@@ -98,6 +118,8 @@ public class Aluno {
 	public List<Atividade> getAtividades() {
 		return atividadesTotal;
 	}
+	
+	
 
 	public int getId() {
 		return id;
@@ -194,4 +216,34 @@ public class Aluno {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public List<Atividade> getAtividadesTotal() {
+		return atividadesTotal;
+	}
+
+	public List<Atividade> getAtividadesGrupo1() {
+		return atividadesGrupo1;
+	}
+
+	public List<Atividade> getAtividadesGrupo2() {
+		return atividadesGrupo2;
+	}
+
+	public List<Atividade> getAtividadesGrupo3() {
+		return atividadesGrupo3;
+	}
+
+	public List<Atividade> getAtividadesGrupo4() {
+		return atividadesGrupo4;
+	}
+
+	public List<Atividade> getAtividadesGrupo5() {
+		return atividadesGrupo5;
+	}
+
+	public List<Atividade> getAtividadesGrupo6() {
+		return atividadesGrupo6;
+	}
+	
+	
 }

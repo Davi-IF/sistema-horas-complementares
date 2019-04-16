@@ -20,7 +20,13 @@ public class MostraAtividades implements Acao{
 		
 		request.setAttribute("atividades", a.getAtividades());
 		request.setAttribute("aluno", a);
-		
+		request.setAttribute("tamanho1", a.tamanhoList(a.getAtividadesGrupo1()));
+		request.setAttribute("tamanho2", a.tamanhoList(a.getAtividadesGrupo2()));
+		request.setAttribute("tamanho3", a.tamanhoList(a.getAtividadesGrupo3()));
+		request.setAttribute("tamanho4", a.tamanhoList(a.getAtividadesGrupo4()));
+		request.setAttribute("tamanho5", a.tamanhoList(a.getAtividadesGrupo5()));
+		request.setAttribute("tamanho6", a.tamanhoList(a.getAtividadesGrupo6()));
+		request.setAttribute("tamanhoT", a.tamanhoList(a.getAtividades()));
 		return "forward:mostraAtividades.jsp";
 	}
 

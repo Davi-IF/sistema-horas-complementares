@@ -6,20 +6,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="container shadow-lg p-4"> 
 	<h1> Olá ${aluno.nome }</h1>
 	
 	<h2>Cadastre sua atividade</h2>
-	
+	<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#grupo1">
+		Grupo 1
+	</button>
+	<div id="grupo1" class="collapse">
 	<form action="${metodo }" method="post">
 		<h3>Grupo 1</h3> <input type="hidden" value="1" name="grupo">
-		Nome <input type="text" name="nome"><br>
-		Horas Totais <input type="number" min="1" name="horasTotais"><br>
 		
-		Tipo de Atividade
+		<div class="justify-content-around mb-3">
+
+		Nome: <input type="text" name="nome">
+		Horas Totais: <input type="number" min="1" name="horasTotais"><br><br>
+		
+		</div>
+		<div class="justify-content-around mb-3">
+		Tipo de Atividade:
 		<input list="atividades1" name="tipo">
 		<datalist id="atividades1">
 		  <option value="1-Participacao em grupos de estudo/pesquisa">
@@ -30,12 +45,13 @@
 		  <option value="6-Curso de extensao">
 		</datalist>
 		
-		<br>Documento <input type="file" name="documento"><br>
+		Documento: <input type="file" name="documento"><br>
 		<input type="hidden" name="aluno" value="${aluno.id}" ><br>
+		</div>
+		<input type="submit" class="btn btn-success">
 		
-		<input type="submit">
 	</form>
-	
+	</div>
 	<form action="${metodo }" method="post">
 		<h3>Grupo 2</h3> <input type="hidden" value="2" name="grupo">
 		Nome <input type="text" name="nome"><br>
@@ -139,5 +155,6 @@
 	</form>
 	 
 	 <a href="${atividades }&id=${aluno.id}">Atividades do aluno</a>
+	 </div>
 </body>
 </html>

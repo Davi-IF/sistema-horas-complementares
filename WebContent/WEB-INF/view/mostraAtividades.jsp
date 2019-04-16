@@ -14,9 +14,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="container shadow-lg p-4">
 	<h2>Olá ${aluno.nome }</h2>
-	<table class="table table-dark table-striped">
 	
+	<table class="table table-dark table-striped">
 		<tr>
 			<th>Nome da atividade</th>
 			<th>Nome do Aluno</th>
@@ -36,8 +37,29 @@
 				<td>${atividade.horasAproveitadas }</td>	
 			</tr>
 		</c:forEach>
-	
-	
 	</table>
+	
+	<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#detalhes">
+		Detalhes
+	</button>
+	  <div id="detalhes" class="collapse">
+	  	<div class="container">
+		  <h2>Detalhes por grupo</h2>
+		  <ul class="list-group">
+		    <li class="list-group-item">Grupo 1: ${tamanho1}/50 horas</li>
+		    <li class="list-group-item">Grupo 2: ${tamanho2 }/20 horas </li>
+		    <li class="list-group-item">Grupo 3: ${tamanho3 }/40 horas</li>
+		   	<li class="list-group-item">Grupo 4: ${tamanho4 }/40 horas </li>
+		  	<li class="list-group-item">Grupo 5: ${tamanho5 }/40 horas</li>
+		    <li class="list-group-item">Grupo 6: ${tamanho6 }/30 horas </li>
+		    <li class="list-group-item">Total de horas: ${tamanhoT }/100 horas</li>
+		    <p>Progresso do aluno</p>
+		    <div class="progress">
+    			<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:${tamanhoT}%">${tamanhoT}%</div>
+  			</div>
+		  </ul>
+		</div>
+	  </div>
+	</div>
 </body>
 </html>
