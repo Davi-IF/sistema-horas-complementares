@@ -10,7 +10,7 @@ public class Banco {
 	private static int chaveAlunos = 1;
 	
 	static {
-		Aluno a = new Aluno("josé", "1234", "1234", "1234");
+		Aluno a = new Aluno("José Silva", "1234", "1234", "1234");
 		a.setId(chaveAlunos++);
 		Banco.listaDeAlunos.add(a);
 	}

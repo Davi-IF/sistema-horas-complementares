@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:url value="main?acao=CadastroAtividade" var="metodo" />
+<c:url value="main?acao=MostraAtividades" var="atividades" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +22,12 @@
 		Tipo de Atividade
 		<input list="atividades1" name="tipo">
 		<datalist id="atividades1">
-		  <option value="Participação em grupos de estudo/pesquisa">
-		  <option value="Monitoria Institucional ou Voluntária">
-		  <option value="Bolsa de iniciação científica">
-		  <option value="Projeto social">
-		  <option value="Projeto de extensão">
-		  <option value="Curso de extensão">
+		  <option value="1-Participacao em grupos de estudo/pesquisa">
+		  <option value="2-Monitoria Institucional ou Voluntaria">
+		  <option value="3-Bolsa de iniciacao cientifica">
+		  <option value="4-Projeto social">
+		  <option value="5-Projeto de extensao">
+		  <option value="6-Curso de extensao">
 		</datalist>
 		
 		<br>Documento <input type="file" name="documento"><br>
@@ -137,6 +138,6 @@
 		<input type="submit"/>
 	</form>
 	 
-	 <a href="${atividades }">Atividades do aluno</a>
+	 <a href="${atividades }&id=${aluno.id}">Atividades do aluno</a>
 </body>
 </html>

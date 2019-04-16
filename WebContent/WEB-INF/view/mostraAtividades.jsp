@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,10 +11,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <title>Insert title here</title>
 </head>
 <body>
+	<h2>Olá ${aluno.nome }</h2>
 	<table class="table table-dark table-striped">
 	
 		<tr>
@@ -24,10 +24,8 @@
 			<th>Tipo da atividade</th>
 			<th>Horas Totais</th>
 			<th>Horas Aproveitadas</th>
-			<th>Aceitar</th>
-			<th>Recusar</th>
 		</tr>
-		<c:forEach items="${atividades }" var="atividade">
+		<c:forEach items="${atividades}" var="atividade">
 		
 			<tr>
 				<td>${atividade.nome }</td>
@@ -36,9 +34,6 @@
 				<td>${atividade.tipoAtividade }</td>
 				<td>${atividade.horasTotais }</td>				
 				<td>${atividade.horasAproveitadas }</td>	
-							
-				<td><a href="main?acao=AprovaAtividade&chave=${atividade.chave}"><i class='far fa-thumbs-up' style='font-size:24px'></i></a></td>
-				<td><a href="main?acao=DesaprovaAtividade&chave=${atividade.chave}"><i class='far fa-thumbs-down' style='font-size:24px'></i></a></td>
 			</tr>
 		</c:forEach>
 	

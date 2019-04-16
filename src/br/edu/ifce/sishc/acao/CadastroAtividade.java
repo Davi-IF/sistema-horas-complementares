@@ -22,14 +22,11 @@ public class CadastroAtividade implements Acao {
 			Aluno a = b.getAluno(Integer.parseInt(request.getParameter("aluno")));
 			Coordenador c = new Coordenador();
 			
-			Atividade at = new Atividade();
-			at.setAluno(a);
-			at.setDocumento("");
-			at.setGrupo(Integer.parseInt(request.getParameter("grupo")));
-			at.setHorasTotais(Integer.parseInt(request.getParameter("horasTotais")));
-			at.setNome(request.getParameter("nome"));
-			at.setTipoAtividade(request.getParameter("tipo"));
-			
+			Atividade at = new Atividade(Integer.parseInt(request.getParameter("grupo")),
+											request.getParameter("nome"),
+											Integer.parseInt(request.getParameter("horasTotais")),
+											request.getParameter("tipo"),
+											a);
 			c.adiciona(at);
 			
 			request.setAttribute("aluno", a);

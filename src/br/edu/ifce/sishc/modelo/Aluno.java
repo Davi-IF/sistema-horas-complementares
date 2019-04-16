@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aluno {
-	
-	private List<Atividade> atividades = new ArrayList<Atividade>();
-	
+
+	private List<Atividade> atividadesTotal = new ArrayList<Atividade>();
+	private List<Atividade> atividadesGrupo1 = new ArrayList<Atividade>();
+	private List<Atividade> atividadesGrupo2 = new ArrayList<Atividade>();
+	private List<Atividade> atividadesGrupo3 = new ArrayList<Atividade>();
+	private List<Atividade> atividadesGrupo4 = new ArrayList<Atividade>();
+	private List<Atividade> atividadesGrupo5 = new ArrayList<Atividade>();
+	private List<Atividade> atividadesGrupo6 = new ArrayList<Atividade>();
+
 	private int id;
 	private String nome;
 	private String matricula;
@@ -19,24 +25,78 @@ public class Aluno {
 	private int semestre;
 	private String email;
 	private String senha;
-	
+
 	public Aluno() {
-		
+
 	}
-	
+
 	public Aluno(String nome, String matricula, String cpf, String senha) {
 		this.nome = nome;
 		this.matricula = matricula;
 		this.cpf = cpf;
 		this.senha = senha;
 	}
-	
+
 	public void addAtividade(Atividade a) {
-		atividades.add(a);
+		switch (a.getGrupo()) {
+		case 1:
+			if(tamanhoList(atividadesGrupo1) < 51) {
+				atividadesGrupo1.add(a);
+				addAtividadeTotal(a);
+			}
+			break;
+		case 2:
+			if(tamanhoList(atividadesGrupo2) < 21) {
+				atividadesGrupo2.add(a);
+				addAtividadeTotal(a);
+			}
+			break;
+		case 3:
+			if(tamanhoList(atividadesGrupo3) < 41) {
+				atividadesGrupo3.add(a);
+				addAtividadeTotal(a);
+			}
+			break;
+		case 4:
+			if(tamanhoList(atividadesGrupo4) < 41) {
+				atividadesGrupo4.add(a);
+				addAtividadeTotal(a);
+			}
+			break;
+		case 5:
+			if(tamanhoList(atividadesGrupo5) < 41) {
+				atividadesGrupo5.add(a);
+				addAtividadeTotal(a);
+			}
+			break;
+		case 6:
+			if(tamanhoList(atividadesGrupo6) < 31) {
+				atividadesGrupo6.add(a);
+				addAtividadeTotal(a);
+			}
+			break;
+
+		default:
+			break;
+		}
 	}
-	
-	public List<Atividade> getAtividades(){
-		return atividades;
+
+	public int tamanhoList(List<Atividade> list) {
+		int tamanho = 0;
+
+		for (Atividade a : list) {
+			tamanho += a.getHorasAproveitadas();
+		}
+
+		return tamanho;
+	}
+
+	private void addAtividadeTotal(Atividade a) {
+		atividadesTotal.add(a);
+	}
+
+	public List<Atividade> getAtividades() {
+		return atividadesTotal;
 	}
 
 	public int getId() {
