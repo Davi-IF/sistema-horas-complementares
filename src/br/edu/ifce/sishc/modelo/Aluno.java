@@ -52,7 +52,7 @@ public class Aluno {
 			break;
 		case 2:
 			if(tamanhoList(atividadesGrupo2) < 20) {
-				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 20) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo2) > 20) {
 					a.defineHorasAproveitadas(20-tamanhoList(atividadesGrupo1));
 				}
 				atividadesGrupo2.add(a);
@@ -61,7 +61,7 @@ public class Aluno {
 			break;
 		case 3:
 			if(tamanhoList(atividadesGrupo3) < 40) {
-				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 40) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo3) > 40) {
 					a.defineHorasAproveitadas(40-tamanhoList(atividadesGrupo1));
 				}
 				atividadesGrupo3.add(a);
@@ -70,7 +70,7 @@ public class Aluno {
 			break;
 		case 4:
 			if(tamanhoList(atividadesGrupo4) < 40) {
-				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 40) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo4) > 40) {
 					a.defineHorasAproveitadas(40-tamanhoList(atividadesGrupo1));
 				}
 				atividadesGrupo4.add(a);
@@ -79,7 +79,7 @@ public class Aluno {
 			break;
 		case 5:
 			if(tamanhoList(atividadesGrupo5) < 40) {
-				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 40) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo5) > 40) {
 					a.defineHorasAproveitadas(40-tamanhoList(atividadesGrupo1));
 				}
 				atividadesGrupo5.add(a);
@@ -88,7 +88,7 @@ public class Aluno {
 			break;
 		case 6:
 			if(tamanhoList(atividadesGrupo6) < 30) {
-				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo1) > 30) {
+				if(a.getHorasAproveitadas()+tamanhoList(atividadesGrupo6) > 30) {
 					a.defineHorasAproveitadas(30-tamanhoList(atividadesGrupo1));
 				}
 				atividadesGrupo6.add(a);

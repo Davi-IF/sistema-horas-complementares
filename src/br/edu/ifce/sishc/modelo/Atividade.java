@@ -50,9 +50,10 @@ public class Atividade {
 		this.horasAproveitadas = horas;
 	}
 	public void setHorasAproveitadas() {
+		String[] tp;
 		switch (this.grupo) {
 		case 1:
-			String[] tp = tipoAtividade.split("-");
+			tp = tipoAtividade.split("-");
 			if(tp[0].equals("1")) {
 				this.horasAproveitadas = 40;
 			}else if(tp[0].equals("2")) {
@@ -64,6 +65,90 @@ public class Atividade {
 			}else if(tp[0].equals("5")) {
 				this.horasAproveitadas = 20;
 			}else if(tp[0].equals("6")) {
+				this.horasAproveitadas = 10;
+			}
+			break;
+		case 2:
+			tp = tipoAtividade.split("-");
+			if(tp[0].equals("1")) {
+				this.horasAproveitadas = 1;
+			}else if(tp[0].equals("2")) {
+				this.horasAproveitadas = 1;
+			}else if(tp[0].equals("3")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("4")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("5")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("6")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("7")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("8")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("9")) {
+				this.horasAproveitadas = 2;
+			}else if(tp[0].equals("10")) {
+				this.horasAproveitadas = 10;
+			}
+			break;
+		case 3:
+			tp = tipoAtividade.split("-");
+			if(tp[0].equals("1")) {
+				this.horasAproveitadas = 4;
+			}else if(tp[0].equals("2")) {
+				this.horasAproveitadas = 8;
+			}else if(tp[0].equals("3")) {
+				this.horasAproveitadas = 4;
+			}else if(tp[0].equals("4")) {
+				this.horasAproveitadas = 4;
+			}else if(tp[0].equals("5")) {
+				this.horasAproveitadas = 8;
+			}else if(tp[0].equals("6")) {
+				this.horasAproveitadas = 4;
+			}else if(tp[0].equals("7")) {
+				this.horasAproveitadas = 12;
+			}else if(tp[0].equals("8")) {
+				this.horasAproveitadas = 1;
+			}
+			break;
+		case 4:
+			tp = tipoAtividade.split("-");
+			if(tp[0].equals("1")) {
+				this.horasAproveitadas = 10;
+			}else if(tp[0].equals("2")) {
+				this.horasAproveitadas = 10;
+			}else if(tp[0].equals("3")) {
+				this.horasAproveitadas = 40;
+			}else if(tp[0].equals("4")) {
+				this.horasAproveitadas = 15;
+			}
+			break;
+		case 5:
+			tp = tipoAtividade.split("-");
+			if(tp[0].equals("1")) {
+				this.horasAproveitadas = 20;
+			}else if(tp[0].equals("2")) {
+				this.horasAproveitadas = 30;
+			}else if(tp[0].equals("3")) {
+				this.horasAproveitadas = 10;
+			}else if(tp[0].equals("4")) {
+				this.horasAproveitadas = 20;
+			}else if(tp[0].equals("5")) {
+				this.horasAproveitadas = 5;
+			}
+			break;
+		case 6:
+			tp = tipoAtividade.split("-");
+			if(tp[0].equals("1")) {
+				this.horasAproveitadas = 15;
+			}else if(tp[0].equals("2")) {
+				this.horasAproveitadas = 10;
+			}else if(tp[0].equals("3")) {
+				this.horasAproveitadas = 5;
+			}else if(tp[0].equals("4")) {
+				this.horasAproveitadas = 5;
+			}else if(tp[0].equals("5")) {
 				this.horasAproveitadas = 10;
 			}
 			break;

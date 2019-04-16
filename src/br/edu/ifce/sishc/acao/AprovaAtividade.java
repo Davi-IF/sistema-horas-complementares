@@ -21,7 +21,10 @@ public class AprovaAtividade implements Acao {
 		Coordenador c = new Coordenador();
 		Banco b = new Banco();
 		Atividade a = c.getAtividade(Integer.parseInt(request.getParameter("chave")));
+		
 		Aluno al = b.getAluno(a.getAluno().getId());
+		
+		System.out.println(a.getAluno().getId());
 		
 		al.addAtividade(a);
 		c.Aprova(a.getChave());
@@ -29,7 +32,7 @@ public class AprovaAtividade implements Acao {
 		List<Atividade> atividades = c.getAtividadesRecebidas();
 		request.setAttribute("atividades", atividades);
 		
-		return "forward:paginaCoordenador.jsp";
+		return "redirect:main?acao=PaginaCoordenador";
 	}
 
 }

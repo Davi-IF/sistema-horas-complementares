@@ -27,7 +27,7 @@ public class DesaprovaAtividade implements Acao{
 		List<Atividade> atividades = c.getAtividadesRecebidas();
 		request.setAttribute("atividades", atividades);
 		
-		return "forward:paginaCoordenador.jsp";
+		return "redirect:main?acao=PaginaCoordenador";
 	}
 
 }
